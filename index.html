@@ -5,22 +5,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet" />
+
+    <title>Gerador de senha</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <h1>Gerador de senha</h1>
+    <main>
+        <section class="hero">
+            <h1 class="title">Gerador de senha</h1>
 
-    <p>Utilize o nosso gerador online para criar uma senha forte e segura</p>
+            <p class="subtitle">Utilize o nosso gerador online para criar uma senha forte e segura</p>
+        </section>
 
-    <input type="text" name="password" id="password" />
+        <section class="box">
+            <div class="password">
+                <div class="text">
+                    <input type="text" name="password" id="password" readonly/>
+                </div>
+                <div class="actions">
+                    <button id="copy"><img src="img/copy.svg" alt=""></button>
+                    <button id="renew"><img src="img/renew.svg" alt=""></button>
+                </div>
+            </div>
+            <div class="security-indicator">
+                <div id="security-indicator-bar" class="bar" style="width: 90%;"></div>
+            </div>
+            
+        </section>
 
-    <input type="range" name="password-lenght" id="password-lenght" value="16" max="64" min="4" />
+        <section class="box customize">
+            <h3 class="title">Personalizar</h3>
+            <div class="actions">
+                <div class="password-lenght">
+                    <p>Tamanho: <span id="password-lenght-text">16</span></p>
+                    <input class="slider" type="range" name="password-lenght" id="password-lenght" value="16" max="64"
+                        min="4" />
+                </div>
+                <div class="config">
+                    <label class="checkbox-container">
+                        <span class="text">Maiúsculas</span>
+                        <input type="checkbox" id="uppercase-check" checked></input>
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkbox-container">
+                        <span class="text">Números</span>
+                        <input type="checkbox" id="number-check" checked></input>
+                        <span class="checkmark"></span>
+                    </label><label class="checkbox-container">
+                        <span class="text">Símbolos</span>
+                        <input type="checkbox" id="symbol-check" checked></input>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+        </section>
 
-    <button id="copy">Copiar senha</button>
+        <div class="submit">
+            <button id="copy">Copiar senha</button>
+        </div>
 
-    <script src="main.js"></script>
+        <section class="alert-box">
+            <div class="alert">
+                <p>Senha copiada!</p>
+            </div>
+        </section>
+
+        <script src="main.js"></script>
+    </main>
 
 </body>
 
